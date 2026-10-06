@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Restore saved theme before page render to prevent flash -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advyth S | Software Developer</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Playfair+Display:ital,wght@1,600;1,800&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./AS_Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./AS_Logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./AS_Logo.png">
+</head>
+
+<body>
+    <canvas id="starfield-canvas"></canvas>
+    <!-- Top Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="progressBar"></div>
+
+    <!-- Background Grid & Cursor Spotlight -->
+    <div class="bg-grid"></div>
+    <div class="cursor-spotlight" id="spotlight"></div>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="glow-orb orb-gold-1"></div>
+    <div class="glow-orb orb-gold-2"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-wrapper">
+        <nav class="navbar glass">
+            <a href="index.html" class="logo">
+                <img src="./AS_Symbol.png" alt="Advyth S Logo" class="logo-img" />
+                <span class="logo-text">Advyth<span class="dot">.</span>S</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="experience.html" class="nav-item">Experience</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="contact.html" class="nav-item active">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" download="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" class="btn-resume" title="Download Resume">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span>Resume</span>
+                </a>
+
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="section-padding contact-page-container">
+
+        <!-- TOP PROFILE HERO HEADER (2-COLUMN FLEX) -->
+        <section class="contact-hero scroll-hidden">
+
+            <!-- Left Side: Text Content -->
+            <div class="contact-hero-text">
+                <span class="user-designation">SOFTWARE ENGINEER &amp; FULL STACK DEVELOPER</span>
+                <h1 class="gradient-headline">Let's Connect &amp; Build Together</h1>
+                <p class="contact-hero-subtext">
+                    Whether you have a question, a project idea, a job opportunity, or just want to say hi—my inbox is
+                    always open!
+                </p>
+            </div>
+
+            <!-- Right Side: 3:4 Glass Photo Frame -->
+            <div class="contact-profile-frame-34 glass">
+                <img src="profile_picture2.jpg" alt="Advyth S" class="contact-profile-img-34" />
+                <div class="frame-glass-reflection"></div>
+            </div>
+
+        </section>
+
+        <!-- CONTACT GRID SECTION -->
+        <section class="contact-grid-wrapper scroll-hidden">
+
+            <!-- Left Column: Direct Communication Cards -->
+            <div class="contact-cards-column">
+
+                <!-- Location / Address Card -->
+                <div class="contact-card glass">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-location-dot text-gold"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="card-label">Location / Address</span>
+                        <h4 class="card-value">Trivandrum, Kerala, India</h4>
+                        <p class="card-sub">Open to remote roles & relocation</p>
+                    </div>
+                </div>
+
+                <!-- Email Card -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=advythmuthuvila@gmail.com"
+                    class="contact-card glass contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope text-gold"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="card-label">Direct Email</span>
+                        <h4 class="card-value">advythmuthuvila@gmail.com</h4>
+                        <p class="card-sub">Click to send an email</p>
+                    </div>
+                    <i class="fas fa-arrow-up-right-from-square card-external-icon"></i>
+                </a>
+
+                <!-- Phone / WhatsApp Card -->
+                <a href="tel:+910000000000" class="contact-card glass contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone text-gold"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="card-label">Phone & WhatsApp</span>
+                        <h4 class="card-value">+91 9496440625</h4>
+                        <p class="card-sub">For quick technical calls</p>
+                    </div>
+                    <i class="fas fa-arrow-up-right-from-square card-external-icon"></i>
+                </a>
+
+                <!-- Social Channels (LinkedIn, GitHub, Instagram) -->
+                <div class="socials-glass-card glass">
+                    <span class="card-label">Social & Professional Networks</span>
+                    <div class="social-links-grid">
+
+                        <a href="https://www.instagram.com/advy7h/" target="_blank" rel="noopener noreferrer"
+                            class="social-pill">
+                            <i class="fab fa-instagram instagram-color"></i>
+                            <span>Instagram</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/advyths" target="_blank" rel="noopener noreferrer"
+                            class="social-pill">
+                            <i class="fab fa-linkedin linkedin-color"></i>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a href="https://github.com/advy7h" target="_blank" rel="noopener noreferrer"
+                            class="social-pill">
+                            <i class="fab fa-github github-color"></i>
+                            <span>GitHub</span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Interactive Message Form -->
+            <div class="contact-form-card glass">
+                <h3 class="form-title"><i class="fas fa-paper-plane text-gold"></i> Send a Message</h3>
+                <form action="https://formspree.io/f/mkjgapzb" method="POST" class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity"
+                            required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Hi Advyth, I'd like to talk about..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-resume btn-submit-form">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- STANDALONE THANK YOU SECTION (NO CONTAINER) -->
+        <section class="thankyou-section scroll-hidden">
+            <div class="thankyou-inner">
+                <h3 class="thankyou-title">Thank You for Reaching Out</h3>
+
+                <!-- Personal Handwritten Signature -->
+                <div class="signature-container">
+                    <span class="user-signature">Advyth S</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left: Copyright -->
+            <p class="footer-left">&copy; 2026 Advyth S. All rights reserved.</p>
+
+            <!-- Center: Signature -->
+            <div class="footer-center">
+                <img src="signature.png" alt="Advyth S Signature" class="footer-signature-img" />
+            </div>
+
+            <!-- Right: Made With Quote -->
+            <p class="footer-right">
+                Built with intention
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

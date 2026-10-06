@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Restore saved theme before page render to prevent flash -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advyth S | Software Developer</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Playfair+Display:ital,wght@1,600;1,800&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./AS_Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./AS_Logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./AS_Logo.png">
+</head>
+
+<body>
+    <canvas id="starfield-canvas"></canvas>
+    <!-- Top Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="progressBar"></div>
+
+    <!-- Background Grid & Cursor Spotlight -->
+    <div class="bg-grid"></div>
+    <div class="cursor-spotlight" id="spotlight"></div>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="glow-orb orb-gold-1"></div>
+    <div class="glow-orb orb-gold-2"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-wrapper">
+        <nav class="navbar glass">
+            <a href="index.html" class="logo">
+                <img src="./AS_Symbol.png" alt="Advyth S Logo" class="logo-img" />
+                <span class="logo-text">Advyth<span class="dot">.</span>S</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="./index.html" class="nav-item">Home</a></li>
+                <li><a href="./projects.html" class="nav-item">Projects</a></li>
+                <li><a href="./experience.html" class="nav-item">Experience</a></li>
+                <li><a href="./about.html" class="nav-item active">About</a></li>
+                <li><a href="./contact.html" class="nav-item">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" download="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" class="btn-resume" title="Download Resume">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span>Resume</span>
+                </a>
+
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="section-padding about-page-container">
+
+        <!-- STANDALONE LARGE GRADIENT HEADING (NO BOX CONTAINER) -->
+        <section class="about-hero-standalone scroll-hidden">
+            <div class="hero-title-group">
+                <span class="user-designation">Software Engineer & Full Stack Developer</span>
+                <h1 class="gradient-headline">
+                    "Every lesson learned, every challenge met, and every system built—crafted with patience, line by
+                    line."
+                </h1>
+            </div>
+        </section>
+
+        <!-- SECTION 1: MINIMALIST STORY SPLIT -->
+        <section class="about-story-split scroll-hidden">
+
+            <!-- Left Column: Core Focus -->
+            <div class="story-sidebar glass">
+                <div class="sidebar-header">
+                    <i class="fas fa-code-branch text-gold sidebar-icon"></i>
+                    <h3>Engineering Focus</h3>
+                </div>
+                <div class="sidebar-pills">
+                    <div class="sidebar-pill">
+                        <i class="fas fa-terminal text-gold"></i>
+                        <span>Backend Systems</span>
+                    </div>
+                    <div class="sidebar-pill">
+                        <i class="fas fa-bug text-gold"></i>
+                        <span>Clean Code & Debugging</span>
+                    </div>
+                    <div class="sidebar-pill">
+                        <i class="fas fa-layer-group text-gold"></i>
+                        <span>Scalable Architecture</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Minimalist Narrative -->
+            <div class="story-main glass">
+                <h3 class="story-title"><i class="fas fa-heart text-gold"></i> Passion for Code</h3>
+                <p class="story-paragraph">
+                    To me, coding is the art of building living, scalable systems out of pure logic.
+                </p>
+                <ul class="minimal-list">
+                    <li><strong>Problem Solver:</strong> Breaking complex challenges into clean, structured components.
+                    </li>
+                    <li><strong>Backend Mindset:</strong> Architecting Python scripts, web APIs, and optimized SQL
+                        databases.</li>
+                    <li><strong>Continuous Growth:</strong> Driven by learning new paradigms and perfecting software
+                        craftsmanship daily.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- SECTION 2: SOFT SKILLS (MINIMAL ACCENT CARDS) -->
+        <section class="soft-skills-section scroll-hidden">
+            <div class="section-title-wrapper">
+                <h3 class="sub-section-title"><i class="fas fa-user-gear text-gold"></i> Leadership & Collaboration</h3>
+            </div>
+
+            <div class="skills-flex-list">
+                <div class="skill-accent-card glass">
+                    <div class="accent-border"></div>
+                    <div class="skill-card-content">
+                        <div class="skill-icon"><i class="fas fa-people-roof text-gold"></i></div>
+                        <div class="skill-info">
+                            <h4>Student Governance & Leadership</h4>
+                            <p>Elected council member bridging communication, directing welfare, and guiding team
+                                initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-accent-card glass">
+                    <div class="accent-border"></div>
+                    <div class="skill-card-content">
+                        <div class="skill-icon"><i class="fas fa-comments text-gold"></i></div>
+                        <div class="skill-info">
+                            <h4>Active Communication & Mentorship</h4>
+                            <p>Empathetic team collaborator focused on transparent technical discussions and mentoring
+                                peers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BENTO MOSAIC GRID (LIFE BEYOND WORK) -->
+        <section class="personal-bento-section scroll-hidden">
+            <div class="section-title-wrapper">
+                <h3 class="sub-section-title"><i class="fas fa-mug-hot text-gold"></i> Beyond the Terminal</h3>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card bento-wide glass">
+                    <div class="bento-badge"><i class="fas fa-futbol text-gold"></i> Sports</div>
+                    <h4 class="bento-title">Football & Cricket</h4>
+                    <p class="bento-text">Football is my absolute favorite escape—I live and breathe it on and off the
+                        field, but cricket is always right there taking up the rest of my sports fix.</p>
+                </div>
+
+                <div class="bento-card glass">
+                    <div class="bento-badge"><i class="fas fa-film text-gold"></i> Cinema</div>
+                    <h4 class="bento-title">Movies & Series</h4>
+                    <p class="bento-text">My ideal way to recharge is getting completely lost in a great movie or
+                        bingeing a solid TV show.</p>
+                </div>
+
+                <div class="bento-card glass">
+                    <div class="bento-badge"><i class="fas fa-route text-gold"></i> Travel</div>
+                    <h4 class="bento-title">Road Trips</h4>
+                    <p class="bento-text">Some of my best memories come from unplanned drives, good music, and exploring
+                        new spots with close friends.</p>
+                </div>
+
+                <div class="bento-card bento-wide glass">
+                    <div class="bento-badge"><i class="fas fa-heart text-gold"></i> Comfort Space</div>
+                    <h4 class="bento-title">Family & Friends</h4>
+                    <p class="bento-text">At the end of the day, it's the people in my corner who keep me going and keep
+                        me grounded.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTED THANK YOU SECTION (NO CONTAINER) -->
+        <section class="thankyou-section scroll-hidden">
+            <div class="thankyou-inner">
+                <h3 class="thankyou-title">"Thank You for Taking the Time to Know Me"</h3>
+
+                <!-- Personal Signature -->
+                <div class="signature-container">
+                    <span class="user-signature">Advyth S</span>
+                </div>
+
+
+                <a href="contact.html" class="btn-resume btn-connect">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Let's Connect</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left: Copyright -->
+            <p class="footer-left">&copy; 2026 Advyth S. All rights reserved.</p>
+
+            <!-- Center: Signature -->
+            <div class="footer-center">
+                <img src="signature.png" alt="Advyth S Signature" class="footer-signature-img" />
+            </div>
+
+            <!-- Right: Made With Quote -->
+            <p class="footer-right">
+                Built with intention
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advyth S | Software Developer</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./AS_Logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./AS_Logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./AS_Logo.png">
+</head>
+
+<body>
+  <canvas id="starfield-canvas"></canvas>
+  <!-- Dynamic Background Grid & Cursor Spotlight -->
+  <div class="bg-grid"></div>
+  <div class="cursor-spotlight" id="spotlight"></div>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb orb-gold-1"></div>
+  <div class="glow-orb orb-gold-2"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+  <!-- Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar glass">
+      <a href="index.html" class="logo">
+        <img src="./AS_Symbol.png" alt="Advyth S Logo" class="logo-img" />
+        <span class="logo-text">Advyth<span class="dot">.</span>S</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="./index.html" class="nav-item active">Home</a></li>
+        <li><a href="./projects.html" class="nav-item">Projects</a></li>
+        <li><a href="./experience.html" class="nav-item">Experience</a></li>
+        <li><a href="./about.html" class="nav-item">About</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Resume Download Button -->
+        <a href="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" download="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" class="btn btn-resume"
+          title="Download Resume">
+          <i class="fas fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <i class="fas fa-bars-staggered"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="fade-in-content">
+    <!-- HERO SECTION (Remains visible without delay) -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+
+        <!-- Text Column -->
+        <div class="hero-text-content">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Opportunities</span>
+          </div>
+
+          <p class="greeting">Hello, I am</p>
+
+          <h1 class="hero-name">ADVYTH S</h1>
+
+          <h2 class="hero-title">
+            Building <span class="text-gold">scalable web solutions</span> &amp; optimized database architectures.
+          </h2>
+
+          <p class="hero-subtext">
+            <span class="highlight-text">Software Engineer</span> graduated in Computer Science, specialized in building
+            scalable web applications, optimizing SQL database architectures, and developing backend systems using
+            Python, C#, and .NET.
+          </p>
+
+          <div class="hero-actions">
+            <a href="./projects.html" class="btn btn-primary">
+              <span>View Projects</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="./contact.html" class="btn btn-secondary">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://linkedin.com/in/advyths" target="_blank" aria-label="LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/advy7h" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=advythmuthuvila@gmail.com" aria-label="Email"><i
+                class="fas fa-envelope"></i></a>
+            <a href="tel:9496440625" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          </div>
+        </div>
+
+        <!-- Profile Frame Column -->
+        <div class="hero-image-wrapper">
+          <div class="profile-card glass hover-tilt">
+            <div class="image-frame">
+              <img src="./Profile_picture.JPG" alt="Advyth S" class="profile-img"
+                onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800'" />
+            </div>
+            <div class="profile-caption">
+              <span class="caption-title">Advyth S</span>
+              <span class="caption-sub"><i class="fas fa-location-dot"></i> Trivandrum, Kerala</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MODULE 2: ABOUT & SKILLS GRID -->
+    <section id="about" class="section-padding">
+      <div class="section-header scroll-hidden">
+        <h2 class="section-title">About &amp; <span class="text-gold">Tech Stack</span></h2>
+        <p class="section-subtitle">Core competencies, frameworks, and tools I specialize in.</p>
+      </div>
+
+      <div class="about-container">
+        <!-- Bio Card -->
+        <div class="glass bio-card scroll-hidden">
+          <h3>Professional Summary</h3>
+          <p>
+            Computer Science graduate with hands-on experience in Python, C#, .NET, and SQL database management. Strong
+            foundation in OOPS, DBMS, and Web API integration, with practical experience in building scalable web
+            solutions, optimizing database queries, and debugging applications.
+          </p>
+          <div class="edu-badge">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <strong>B.Tech in Computer Science &amp; Engineering</strong>
+              <p>Mohandas College of Engineering and Technology (CGPA 7.74) | 2022 - 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-code skill-icon"></i>
+            <h4>Languages</h4>
+            <p>Python, C#, SQL, JavaScript, PHP</p>
+          </div>
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-layer-group skill-icon"></i>
+            <h4>Frameworks</h4>
+            <p>Django, Flask, FastAPI, .NET, ASP.NET MVC, Web API</p>
+          </div>
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-desktop skill-icon"></i>
+            <h4>Frontend</h4>
+            <p>HTML5, CSS3, JavaScript, React.js, Next.js</p>
+          </div>
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-database skill-icon"></i>
+            <h4>Databases</h4>
+            <p>MySQL, MSSQL, Oracle, MongoDB</p>
+          </div>
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-screwdriver-wrench skill-icon"></i>
+            <h4>Tools &amp; Testing</h4>
+            <p>Git, GitHub, GitLab, VS Code, Vercel, Render, Manual/Unit Testing</p>
+          </div>
+          <div class="skill-card glass scroll-hidden">
+            <i class="fas fa-brain skill-icon"></i>
+            <h4>Core Concepts</h4>
+            <p>OOPS, DBMS, Data Structures &amp; Algorithms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 3: EXPERIENCE -->
+    <section id="experience" class="section-padding">
+      <div class="section-header scroll-hidden">
+        <h2 class="section-title">Work <span class="text-gold">Experience</span></h2>
+        <p class="section-subtitle">My professional journey and industrial training.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item glass scroll-hidden">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">05/2026 - Present</span>
+            <h3>Python Full Stack Trainee</h3>
+            <h4 class="company">QSpiders, Kochi</h4>
+            <ul>
+              <li>Developing hands-on experience in Python-based backend services and database-driven applications using
+                SQL.</li>
+              <li>Working on full-stack application development, testing, database operations, and code implementation.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass scroll-hidden">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">05/2025 - 06/2025</span>
+            <h3>Web Development Intern</h3>
+            <h4 class="company">KELTRON Knowledge Centre, Kochi</h4>
+            <ul>
+              <li>Developed Django web modules and backend APIs with robust database integration.</li>
+              <li>Optimized SQL database queries to improve backend response times and overall server performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 4: PROJECTS -->
+    <section id="projects" class="section-padding">
+      <div class="section-header scroll-hidden">
+        <h2 class="section-title">Featured <span class="text-gold">Projects</span></h2>
+        <p class="section-subtitle">Practical applications built with AI, Computer Vision, and Web APIs.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass scroll-hidden">
+          <div class="project-header">
+            <i class="fas fa-wallet project-icon"></i>
+            <span class="project-date">07/2025 - 05/2026</span>
+          </div>
+          <h3>Smart Spending with AI</h3>
+          <p>
+            Financial management application built with Python backend services, database integration, and AI-driven
+            analysis using ASP.NET. Features expense tracking, budgeting, recommendations, interactive dashboards, and
+            Web API integration.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>ASP.NET</span>
+            <span>AI Integration</span>
+            <span>SQL</span>
+            <span>Web API</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="projects.html#smart-spending" class="btn-card-link">
+              <span>View Details</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass scroll-hidden">
+          <div class="project-header">
+            <i class="fas fa-camera-retro project-icon"></i>
+            <span class="project-date">01/2025 - 04/2025</span>
+          </div>
+          <h3>Automated Attendance Manager</h3>
+          <p>
+            Flask-based web application for automated attendance processing using Python and OpenCV. Implemented
+            real-time face recognition, attendance processing logic, and database record management.
+          </p>
+          <div class="project-tags">
+            <span>Flask</span>
+            <span>OpenCV</span>
+            <span>Python</span>
+            <span>Face Recognition</span>
+            <span>MySQL</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="projects.html#attendance-manager" class="btn-card-link">
+              <span>View Details</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MODULE 5: CONTACT & FOOTER -->
+    <section id="contact" class="section-padding">
+      <div class="section-header scroll-hidden">
+        <h2 class="section-title">Get In <span class="text-gold">Touch</span></h2>
+        <p class="section-subtitle">Feel free to reach out for opportunities or collaborations.</p>
+      </div>
+
+      <div class="contact-container glass scroll-hidden">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>I am open to software development opportunities, full-stack roles, and project collaborations.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <p>advythmuthuvila@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Phone</strong>
+                <p>+91 9496440625</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <div>
+                <strong>Location</strong>
+                <p>Trivandrum / Kochi, Kerala</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form action="https://formspree.io/f/mkjgapzb" method="POST" class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left: Copyright -->
+      <p class="footer-left">&copy; 2026 Advyth S. All rights reserved.</p>
+
+      <!-- Center: Signature -->
+      <div class="footer-center">
+        <img src="signature.png" alt="Advyth S Signature" class="footer-signature-img" />
+      </div>
+
+      <!-- Right: Made With Quote -->
+      <p class="footer-right">
+        Built with intention
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

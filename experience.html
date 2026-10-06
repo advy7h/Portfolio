@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Restore saved theme before page render to prevent flash -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advyth S | Software Developer</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./AS_Logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./AS_Logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./AS_Logo.png">
+</head>
+
+<body>
+  
+  <canvas id="starfield-canvas"></canvas>
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Background Grid & Cursor Spotlight -->
+  <div class="bg-grid"></div>
+  <div class="cursor-spotlight" id="spotlight"></div>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb orb-gold-1"></div>
+  <div class="glow-orb orb-gold-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar glass">
+      <a href="index.html" class="logo">
+        <img src="./AS_Symbol.png" alt="Advyth S Logo" class="logo-img" />
+        <span class="logo-text">Advyth<span class="dot">.</span>S</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="./index.html" class="nav-item">Home</a></li>
+        <li><a href="./projects.html" class="nav-item">Projects</a></li>
+        <li><a href="./experience.html" class="nav-item active">Experience</a></li>
+        <li><a href="./about.html" class="nav-item">About</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" download="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" class="btn-resume" title="Download Resume">
+          <i class="fas fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <i class="fas fa-bars-staggered"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="section-padding experience-page-container">
+
+    <!-- PAGE HEADER -->
+    <div class="section-header scroll-hidden">
+      <h2 class="section-title">My <span class="text-gold">Experience</span></h2>
+      <p class="section-subtitle">A detailed breakdown of my professional technical incubation, academic leadership, and
+        software internships.</p>
+    </div>
+
+    <div class="timeline-container">
+
+      <!-- EXPERIENCE 1: QSPIDERS KOCHI -->
+      <article class="timeline-card glass scroll-hidden">
+        <div class="timeline-badge">
+          <i class="fas fa-laptop-code text-gold"></i>
+        </div>
+        <div class="timeline-header">
+          <div class="role-title-group">
+            <span class="experience-tag"><i class="fas fa-graduation-cap"></i> Professional Incubation</span>
+            <h3 class="role-title">Python Full Stack Trainee</h3>
+            <h4 class="company-name"><i class="fas fa-building"></i> QSpiders, Kochi</h4>
+          </div>
+        </div>
+
+        <div class="timeline-body">
+          <p class="experience-lead">
+            Participating in an intensive software development and incubation program designed to build enterprise-level
+            expertise in Python full-stack software development, database administration, web programming, and
+            comprehensive software testing methodologies.
+          </p>
+
+          <div class="highlights-box glass-card scroll-hidden">
+            <h5 class="box-subheading"><i class="fas fa-layer-group text-gold"></i> Core Technical Focus Areas</h5>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Full-Stack Application Development:</strong>
+                <span class="desc">Architecting and building end-to-end web applications utilizing Python, SQL, HTML5,
+                  CSS3, and JavaScript. Focusing on writing modular, readable, and scalable clean code.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Software Testing Life Cycle (STLC):</strong>
+                <span class="desc">Practicing structured testing methodologies, including test plan design, manual test
+                  case execution, automated test script creation, defect logging, and bug life cycle tracking.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Database Engineering & Optimization:</strong>
+                <span class="desc">Constructing complex relational database schemas in SQL, executing multi-table JOIN
+                  operations, subqueries, and tuning query execution for performance optimization.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Object-Oriented Programming (OOP):</strong>
+                <span class="desc">Designing modular software structures applying key OOP principles such as
+                  inheritance, encapsulation, abstraction, and polymorphism in Python applications.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-tech-stack scroll-hidden">
+            <span class="tech-title">Technologies & Core Competencies:</span>
+            <div class="tech-tags">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Manual Testing</span>
+              <span class="tech-badge">Automation Testing</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HTML5 / CSS3</span>
+              <span class="tech-badge">OOP</span>
+              <span class="tech-badge">STLC Framework</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXPERIENCE 2: COLLEGE & STUDENT COUNCIL -->
+      <article class="timeline-card glass scroll-hidden">
+        <div class="timeline-badge">
+          <i class="fas fa-university text-gold"></i>
+        </div>
+
+        <div class="timeline-header">
+          <div class="role-header-top">
+            <div class="role-title-group">
+              <span class="experience-tag"><i class="fas fa-award"></i> Academic & Student Leadership</span>
+              <h3 class="role-title">B.Tech in Computer Science & Engineering</h3>
+              <h4 class="company-name"><i class="fas fa-graduation-cap"></i> Mohandas College of Engineering and
+                Technology</h4>
+            </div>
+            <div class="cgpa-badge">
+              <span class="cgpa-label">CGPA</span>
+              <span class="cgpa-value">7.74</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-body">
+
+          <!-- Full-Bleed College Photo Container -->
+          <div class="college-photo-layer glass-card scroll-hidden">
+            <div class="image-overlay"></div>
+            <img src="./MCET.jpg" alt="Mohandas College of Engineering and Technology Campus" class="college-img" />
+            <div class="layer-caption">
+              <span><i class="fas fa-location-dot"></i> Mohandas College of Engineering & Technology, Trivandrum</span>
+            </div>
+          </div>
+
+          <p class="experience-lead">
+            Completed a four-year Bachelor of Technology degree in Computer Science and Engineering. Beyond core
+            computer science coursework, actively served as an elected leader in student government, bridging
+            communication between students, faculty, and university administration.
+          </p>
+
+          <div class="highlights-box glass-card scroll-hidden">
+            <h5 class="box-subheading"><i class="fas fa-users-gear text-gold"></i> Student Governance & Leadership
+              Contributions</h5>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>University Union Councillor & Council Member:</strong>
+                <span class="desc">Elected to represent student interests, direct welfare campaigns, and contribute to
+                  campus policy improvements and academic scheduling.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Event Management & Operations:</strong>
+                <span class="desc">Lead coordinator for departmental tech symposiums, coding hackathons, technical
+                  workshops, and campus-wide cultural events.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Peer Mentorship & Campaign Guidance:</strong>
+                <span class="desc">Served as a Batch Mentor for state-level educational campaigns (such as ASAP Kerala
+                  CIRCLE Campaign), guiding junior peers through academic modules and skill development programs.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Team Collaboration & Mediation:</strong>
+                <span class="desc">Facilitated student grievance resolution, managed cross-functional event budgets, and
+                  represented student delegations at university-level assemblies.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-tech-stack scroll-hidden">
+            <span class="tech-title">Core Competencies & Leadership Skills:</span>
+            <div class="tech-tags">
+              <span class="tech-badge">Student Governance</span>
+              <span class="tech-badge">Event Coordination</span>
+              <span class="tech-badge">Public Speaking</span>
+              <span class="tech-badge">Cross-Functional Team Leadership</span>
+              <span class="tech-badge">Academic Mentorship</span>
+              <span class="tech-badge">Project Operations</span>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- EXPERIENCE 3: KELTRON INTERNSHIP -->
+      <article class="timeline-card glass scroll-hidden">
+        <div class="timeline-badge">
+          <i class="fas fa-briefcase text-gold"></i>
+        </div>
+
+        <div class="timeline-header">
+          <div class="role-title-group">
+            <span class="experience-tag"><i class="fas fa-code"></i> Software Engineering Internship</span>
+            <h3 class="role-title">Web Development Intern</h3>
+            <h4 class="company-name"><i class="fas fa-building"></i> Keltron Knowledge Centre, Kochi</h4>
+          </div>
+        </div>
+
+        <div class="timeline-body">
+          <p class="experience-lead">
+            Completed a structured engineering internship in web application development, focusing on full-stack web
+            architectures, backend framework integration, database design, and web API security standards.
+          </p>
+
+          <div class="highlights-box glass-card scroll-hidden">
+            <h5 class="box-subheading"><i class="fas fa-gears text-gold"></i> Engineering Responsibilities & Execution
+            </h5>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Backend Architecture Development:</strong>
+                <span class="desc">Developed scalable web applications utilizing Python and the Django Web Framework,
+                  implementing Model-View-Template (MVT) design patterns.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>RESTful API Integration:</strong>
+                <span class="desc">Constructed secure HTTP API endpoints, structured JSON payload responses, and
+                  facilitated asynchronous data transfer between client-side interfaces and backend databases.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Database Management & Optimization:</strong>
+                <span class="desc">Applied Django ORM for relational database modeling, schema migrations, and optimized
+                  SQL queries for high-performance data access.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <strong>Code Review & Version Control:</strong>
+                <span class="desc">Utilized Git version control systems to collaborate on repository codebases, resolve
+                  merge conflicts, and follow standard code quality guidelines.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-tech-stack scroll-hidden">
+            <span class="tech-title">Technologies & Frameworks:</span>
+            <div class="tech-tags">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django Framework</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">SQL / Databases</span>
+              <span class="tech-badge">Git / GitHub</span>
+              <span class="tech-badge">MVT Architecture</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left: Copyright -->
+      <p class="footer-left">&copy; 2026 Advyth S. All rights reserved.</p>
+
+      <!-- Center: Signature -->
+      <div class="footer-center">
+        <img src="signature.png" alt="Advyth S Signature" class="footer-signature-img" />
+      </div>
+
+      <!-- Right: Made With Quote -->
+      <p class="footer-right">
+        Built with intention
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

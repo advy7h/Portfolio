@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advyth S | Software Developer</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./AS_Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./AS_Logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./AS_Logo.png">
+</head>
+
+<body>
+    <canvas id="starfield-canvas"></canvas>
+    <!-- Background Grid & Cursor Spotlight -->
+    <div class="bg-grid"></div>
+    <div class="cursor-spotlight" id="spotlight"></div>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="glow-orb orb-gold-1"></div>
+    <div class="glow-orb orb-gold-2"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="progressBar"></div>
+    <!-- Navigation Bar -->
+    <header class="navbar-wrapper">
+        <nav class="navbar glass">
+            <a href="index.html" class="logo">
+                <img src="./AS_Symbol.png" alt="Advyth S Logo" class="logo-img" />
+                <span class="logo-text">Advyth<span class="dot">.</span>S</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="./index.html" class="nav-item">Home</a></li>
+                <li><a href="./projects.html" class="nav-item active">Projects</a></li>
+                <li><a href="./experience.html" class="nav-item">Experience</a></li>
+                <li><a href="./about.html" class="nav-item">About</a></li>
+                <li><a href="./contact.html" class="nav-item">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" download="./ADVYTH_S-SOFTWARE_DEVELOPER.pdf" class="btn-resume" title="Download Resume">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span>Resume</span>
+                </a>
+
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="section-padding project-page-container">
+
+        <!-- PAGE HEADER -->
+        <div class="section-header scroll-hidden">
+            <h2 class="section-title">Featured <span class="text-gold">Projects</span></h2>
+            <p class="section-subtitle">Deep dive into my full-stack engineering, computer vision, and artificial
+                intelligence systems.</p>
+        </div>
+
+        <!-- PROJECT 1: SMART SPENDING WITH AI -->
+        <article id="smart-spending" class="project-detail-card glass scroll-hidden">
+
+            <div class="project-header scroll-hidden">
+                <div class="project-title-area">
+                    <span class="project-tag"><i class="fas fa-brain"></i> AI & Machine Learning</span>
+                    <h3 class="project-name">Smart Spending with AI</h3>
+                    <p class="project-lead">
+                        An intelligent personal finance management platform designed to process raw transaction
+                        histories, extract financial indicators, and leverage Artificial Neural Networks (ANN) to
+                        predict overspending risks and provide dynamic, voice-enabled recommendations.
+                    </p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/advy7h/Smart-Spending-With-AI" target="_blank" class="btn btn-outline"
+                        title="View Source Code">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                </div>
+            </div>
+
+            <!-- Full-Bleed Project Photo/Screenshot Container -->
+            <div class="full-bleed-media glass-card scroll-hidden">
+                <div class="image-overlay"></div>
+                <img src="./SmartSpendingWithAI.png" alt="Smart Spending with AI Dashboard Interface"
+                    class="project-img" />
+                <div class="layer-caption">
+                    <span><i class="fas fa-desktop"></i> Smart Spending with AI — Interactive Dashboard</span>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <div class="info-box glass-card scroll-hidden">
+                    <div class="box-icon icon-danger"><i class="fas fa-triangle-exclamation"></i></div>
+                    <h4 class="box-title">The Problem</h4>
+                    <p class="box-desc">
+                        Traditional personal finance management relies heavily on manual bookkeeping and static
+                        spreadsheets. These passive tools only record historical data without offering dynamic
+                        foresight, leaving users blind to impending overspending risks and budget deficits until after
+                        they occur.
+                    </p>
+                </div>
+
+                <div class="info-box glass-card scroll-hidden">
+                    <div class="box-icon icon-success"><i class="fas fa-lightbulb"></i></div>
+                    <h4 class="box-title">The Solution</h4>
+                    <p class="box-desc">
+                        Smart Spending with AI transforms passive tracking into proactive decision support. By executing
+                        automated data preprocessing and feature extraction, the integrated Artificial Neural Network
+                        evaluates real-time income-to-expense ratios, forecasts budget shortfalls, and delivers
+                        actionable savings advice.
+                    </p>
+                </div>
+            </div>
+
+            <div class="architecture-section glass-card scroll-hidden">
+                <h4 class="summary-title"><i class="fas fa-diagram-project text-gold"></i> System Architecture & Data
+                    Flow</h4>
+                <p class="section-text">
+                    The application follows a multi-layered ASP.NET architecture where user entries flow seamlessly
+                    through feature extraction and model prediction down to interactive visual reports:
+                </p>
+
+                <div class="flowchart-container">
+                    <div class="flow-step glass">
+                        <div class="flow-icon"><i class="fas fa-user-gear"></i></div>
+                        <div class="flow-content">
+                            <h5>1. Data Ingestion</h5>
+                            <p>User logs income, daily expenses, and category budgets into SQL Server.</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+                    <div class="flow-step glass">
+                        <div class="flow-icon"><i class="fas fa-filter"></i></div>
+                        <div class="flow-content">
+                            <h5>2. Preprocessing & Feature Extraction</h5>
+                            <p>Normalizes data and extracts features (savings ratio, budget utilization, expense
+                                trends).</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+                    <div class="flow-step glass">
+                        <div class="flow-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="flow-content">
+                            <h5>3. ANN Model Inference</h5>
+                            <p>Backpropagation neural network predicts overspending risk and evaluates savings
+                                potential.</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+                    <div class="flow-step glass">
+                        <div class="flow-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="flow-content">
+                            <h5>4. Dynamic Insights & Alerts</h5>
+                            <p>Triggers visual dashboards, automated notifications, and voice-assisted recommendations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-summary glass-card scroll-hidden">
+                <h4 class="summary-title"><i class="fas fa-chart-line text-gold"></i> Core Highlights & Technical
+                    Metrics</h4>
+                <p class="summary-text">
+                    Developed using an enterprise-grade ASP.NET web framework paired with C#.NET backend services, the
+                    system offers superior prediction performance compared to conventional machine learning models.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>98.98% Model Accuracy:</strong> Outperforms SVM
+                        (94.8%), KNN (92.4%), and Decision Trees (90.6%) in classifying financial risk behavior.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Automated Feature Engineering:</strong> Converts raw
+                        transaction logs into structural indicators such as monthly expense variance and category
+                        utilization ratios.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Proactive Warning Engine:</strong> Automatically
+                        detects high-risk categories and alerts users prior to budget limit breaches.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Multimodal Accessibility:</strong> Integrates
+                        dynamic visual charts along with speech synthesis (Text-to-Speech) for spoken AI financial
+                        advice.</li>
+                </ul>
+            </div>
+
+            <div class="project-tech-stack scroll-hidden">
+                <span class="tech-title">Key Technologies:</span>
+                <div class="tech-tags">
+                    <span class="tech-badge">ASP.NET</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">Artificial Neural Networks (ANN)</span>
+                    <span class="tech-badge">SQL Server</span>
+                    <span class="tech-badge">JavaScript (ES6+)</span>
+                    <span class="tech-badge">HTML5 / CSS3</span>
+                    <span class="tech-badge">Chart.js</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- PROJECT 2: AUTOMATED ATTENDANCE MANAGER (COLLAPSIBLE TOGGLE) -->
+        <details id="attendance-manager" class="project-detail-card expandable-card glass scroll-hidden">
+
+            <!-- Clickable Header Block -->
+            <summary class="project-header clickable-summary">
+                <div class="project-title-area">
+                    <span class="project-tag"><i class="fas fa-camera text-gold"></i> Computer Vision & AI</span>
+                    <h3 class="project-name">Automated Attendance Manager</h3>
+                    <p class="project-lead">
+                        A contactless, real-time facial recognition system designed to eliminate proxy marking and
+                        streamline attendance logs using computer vision algorithms and a lightweight web framework.
+                    </p>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/advy7h/Automated-Attendance-Manager-Using-Image-Processing"
+                        target="_blank" class="btn btn-outline external-link-btn" title="View Source Code">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    <span class="btn btn-outline toggle-label">
+                        <span class="more-text"><i class="fas fa-chevron-down"></i> More Details</span>
+                        <span class="less-text"><i class="fas fa-chevron-up"></i> Hide Details</span>
+                    </span>
+                </div>
+            </summary>
+
+            <!-- Expandable Inner Content -->
+            <div class="expandable-content">
+
+                <!-- Full-Bleed Attendance Manager Screenshot Container -->
+                <div class="full-bleed-media glass-card scroll-hidden">
+                    <div class="image-overlay"></div>
+                    <img src="./AutomatedAttendanceManager.png" alt="Automated Attendance Manager Dashboard Interface"
+                        class="project-img" />
+                    <div class="layer-caption">
+                        <span><i class="fas fa-id-card"></i> Automated Attendance Manager — Web Control Panel</span>
+                    </div>
+                </div>
+
+                <div class="project-grid">
+                    <div class="info-box glass-card scroll-hidden">
+                        <div class="box-icon icon-danger"><i class="fas fa-triangle-exclamation"></i></div>
+                        <h4 class="box-title">The Problem</h4>
+                        <p class="box-desc">
+                            Conventional attendance tracking—such as manual name call-outs, paper sign-in sheets, or
+                            RFID physical cards—is time-consuming, highly susceptible to proxy marking, and prone to
+                            administrative recording errors.
+                        </p>
+                    </div>
+
+                    <div class="info-box glass-card scroll-hidden">
+                        <div class="box-icon icon-success"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="box-title">The Solution</h4>
+                        <p class="box-desc">
+                            The Automated Attendance Manager implements real-time facial recognition to verify
+                            individual identities touchlessly. By capturing live video feeds via OpenCV and processing
+                            frames against verified image databases, attendance is logged instantly with precise
+                            timestamps.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="architecture-section glass-card scroll-hidden">
+                    <h4 class="summary-title"><i class="fas fa-diagram-project text-gold"></i> System Processing
+                        Architecture</h4>
+                    <p class="section-text">
+                        The computer vision pipeline processes live camera frames through standard image processing
+                        stages down to real-time database logging:
+                    </p>
+
+                    <div class="flowchart-container">
+                        <div class="flow-step glass">
+                            <div class="flow-icon"><i class="fas fa-video"></i></div>
+                            <div class="flow-content">
+                                <h5>1. Video Stream Capture</h5>
+                                <p>Captures real-time camera frames through OpenCV image input feeds.</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+
+                        <div class="flow-step glass">
+                            <div class="flow-icon"><i class="fas fa-expand"></i></div>
+                            <div class="flow-content">
+                                <h5>2. Face Detection & Preprocessing</h5>
+                                <p>Applies Viola-Jones Haar Cascade classifiers to identify facial regions and
+                                    normalizes image frames to grayscale.</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+
+                        <div class="flow-step glass">
+                            <div class="flow-icon"><i class="fas fa-fingerprint"></i></div>
+                            <div class="flow-content">
+                                <h5>3. Feature Encoding & Face Recognition</h5>
+                                <p>Extracts facial embeddings and compares features against stored database templates
+                                    using face matching algorithms.</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-arrow"><i class="fas fa-arrow-down-long"></i></div>
+
+                        <div class="flow-step glass">
+                            <div class="flow-icon"><i class="fas fa-clipboard-check"></i></div>
+                            <div class="flow-content">
+                                <h5>4. Timestamped Logging & UI Update</h5>
+                                <p>Logs attendance automatically into spreadsheet databases and displays confirmation
+                                    statuses on the Flask web interface.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-summary glass-card scroll-hidden">
+                    <h4 class="summary-title"><i class="fas fa-chart-line text-gold"></i> Project Metrics & Core
+                        Features</h4>
+                    <p class="summary-text">
+                        Built using Python, OpenCV, and Flask, the platform delivers an accessible, high-performance
+                        administrative management system for educational and workplace environments.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>High Recognition Accuracy:</strong>
+                            <span class="desc">Achieved <strong>85%–95% accuracy</strong> under varying lighting
+                                conditions and facial angles during real-time evaluations.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Automated Timestamps:</strong>
+                            <span class="desc">Instantly updates attendance records without manual administrative
+                                intervention.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Web Management Dashboard:</strong>
+                            <span class="desc">Features administrative controls for adding, updating, and monitoring
+                                student lists and logs.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Proxy Prevention:</strong>
+                            <span class="desc">Secure biometric authentication prevents buddy-punching and fraudulent
+                                entries.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-tech-stack scroll-hidden">
+                    <span class="tech-title">Key Technologies:</span>
+                    <div class="tech-tags">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">OpenCV</span>
+                        <span class="tech-badge">Viola-Jones Algorithm</span>
+                        <span class="tech-badge">Flask Framework</span>
+                        <span class="tech-badge">Haar Cascades</span>
+                        <span class="tech-badge">HTML5 / CSS3</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </details>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left: Copyright -->
+            <p class="footer-left">&copy; 2026 Advyth S. All rights reserved.</p>
+
+            <!-- Center: Signature -->
+            <div class="footer-center">
+                <img src="signature.png" alt="Advyth S Signature" class="footer-signature-img" />
+            </div>
+
+            <!-- Right: Made With Quote -->
+            <p class="footer-right">
+                Built with intention
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
